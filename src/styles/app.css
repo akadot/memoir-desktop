@@ -1,14 +1,63 @@
 .container {
+    height: 100%;
     display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-row: auto;
-    height: 100vh;
+    grid-template-columns: 20rem 2fr;
+    grid-template-rows: auto;
 }
 
 .sidebar {
-    border-right: 1px solid white;
+    border-right: 1px solid var(--main);
     height: 100%;
+    padding: 0.8rem;
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
+}
+
+.headerContainer{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navItem{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 0.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.notesContainer{
+    width: 100%;
+    border-top: 1px solid var(--main);
+    padding-top: 0.5rem;
+}
+
+.notesMenu{
+    width: 100%;
+}
+
+label{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-gray);
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+}
+
+label input{
+    background-color: transparent;
+    border: none;
+    color: var(--fg);
+}
+
+label input:focus{
+    border: none;
+    outline: none;
 }
