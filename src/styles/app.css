@@ -1,18 +1,18 @@
 .container {
     height: 100%;
     display: grid;
-    grid-template-columns: 20rem 2fr;
-    grid-template-rows: auto;
+    grid-template-columns: max-content 2fr;
 }
 
 .sidebar {
     border-right: 1px solid var(--main);
-    height: 100%;
-    padding: 0.8rem;
     display: flex;
+    padding: 0.2rem 0.5rem;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: space-between;
+    justify-content: flex-start;
+    row-gap: 0.5rem;
+    width: 15rem;
 }
 
 .headerContainer{
@@ -28,7 +28,7 @@
     align-items: center;
     justify-content: flex-start;
     column-gap: 0.3rem;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
 }
 
 .notesContainer{
@@ -39,25 +39,58 @@
 
 .notesMenu{
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    row-gap: 0.8rem;
+}
+
+.notesMenu section{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 0.3rem;
 }
 
 label{
-    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
     background-color: var(--bg-gray);
-    padding: 0.2rem;
     border-radius: 0.2rem;
+    padding: 0.2rem 3px;
 }
 
 label input{
     background-color: transparent;
     border: none;
+    width: 100%;
     color: var(--fg);
 }
 
 label input:focus{
     border: none;
     outline: none;
+}
+
+button{
+    background-color: var(--bg);
+    border: 0.12rem solid var(--main);
+    border-radius: 0.2rem;
+    color: var(--fg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.3rem 0.5rem;
+    column-gap: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+button:hover{
+    background-color: var(--main);
 }

@@ -1,8 +1,12 @@
+import NavItem from './components/NavItem'
+
 import settings from './assets/settings.svg'
 import hash from './assets/hash.svg'
 import trash from './assets/trash.svg'
 import server from './assets/server.svg'
 import search from './assets/search.svg'
+import addFile from './assets/addFile.svg'
+import addFolder from './assets/addFolder.svg'
 
 import './styles/app.css'
 function App() {
@@ -15,30 +19,36 @@ function App() {
         </header>
 
         <nav className='menu'>
-          <section className='navItem'>
-            <img src={server} alt="Source" />
-            <p>Source</p>
-          </section>
-          <section className='navItem'>
-            <img src={hash} alt="Hash" />
-            <p>Tags</p>
-          </section>
-          <section className='navItem'>
-            <img src={trash} alt="Trash" />
-            <p>Trash</p>
-          </section>
+          <NavItem label='Source' img={server} />
+          <NavItem label='Tags' img={hash} />
+          <NavItem label='Trash' img={trash} />
         </nav>
 
         <section className='notesContainer'>
           <section className='notesMenu'>
-            <p>Notes</p>
             <label htmlFor="search">
-              <input type="text" id='search' placeholder='Search...'/>
+              <input type="text" id='search' placeholder='Search...' />
               <img src={search} alt="Search" />
             </label>
+
+            <section>
+              <button className='addNote'>
+                <img src={addFile} alt="Add Note" />
+                <span>Add Note</span>
+              </button>
+              <button className='addFolder'>
+                <img src={addFolder} alt="Add Folder" />
+                <span>Add Folder</span>
+              </button>
+            </section>
           </section>
-          <section></section>
+          <section className='notesList'>
+
+          </section>
         </section>
+      </section>
+      <section className='noteContent'>
+        <p>NOTE DETAILS</p>
       </section>
     </main>
   );
