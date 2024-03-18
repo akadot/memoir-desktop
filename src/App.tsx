@@ -1,4 +1,7 @@
+import { useState } from 'react'
+
 import NavItem from './components/NavItem'
+import SettingsModal from './components/SettingsModal'
 
 import settings from './assets/settings.svg'
 import hash from './assets/hash.svg'
@@ -10,12 +13,14 @@ import addFolder from './assets/addFolder.svg'
 
 import './styles/app.css'
 function App() {
+  const [showModal, setShowModal] = useState(false);
+
   return (
     <main className="container">
       <section className="sidebar">
         <header className='headerContainer'>
           <h1>Memoir</h1>
-          <img src={settings} alt="Settings Icon" />
+          <img src={settings} alt="Settings Icon" onClick={() => setShowModal(!showModal)}/>
         </header>
 
         <nav className='menu'>
@@ -50,6 +55,8 @@ function App() {
       <section className='noteContent'>
         <p>NOTE DETAILS</p>
       </section>
+
+      <SettingsModal close={showModal} handleClose={() => setShowModal(!showModal)}/>
     </main>
   );
 }
